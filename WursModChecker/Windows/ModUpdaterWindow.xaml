@@ -1,0 +1,68 @@
+﻿<mah:MetroWindow x:Class="WursModChecker.Windows.ModUpdaterWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                 xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                 xmlns:models="clr-namespace:WursModChecker.Models" d:DataContext="{d:DesignInstance Type=models:TransactionStatus}"
+                 Title="Wurs Mod Checker"
+                 Width="550"
+                 Height="150"
+                 GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                 ResizeMode="NoResize"
+                 WindowStartupLocation="CenterScreen"
+                 mc:Ignorable="d">
+
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Button>
+                <iconPacks:VaadinIcons Width="22"
+                                  Height="22"
+                                  Kind="CloudDownloadOutline" />
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+
+    <Grid>
+        <TextBlock
+        Name="MyFadingText" FontSize="12" Width="500" FontWeight="Regular" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,22,0,0" TextAlignment="Center" TextWrapping="Wrap">
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                  Storyboard.TargetName="MyFadingText" 
+                  Storyboard.TargetProperty="(TextBlock.Opacity)"
+                  From="0.0" To="1.0" Duration="0:0:1.3" 
+                  AutoReverse="False" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+        <ProgressBar Minimum="0" Maximum="100" Name="pbStatus" Width="200" Height="30" IsIndeterminate="{Binding IsProgressBarIndeterminate, 
+            UpdateSourceTrigger=PropertyChanged}" Value="{Binding ProgressBarPercentage, UpdateSourceTrigger=PropertyChanged}"  
+                     VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="{Binding ProgressBarPercentage, UpdateSourceTrigger=PropertyChanged,StringFormat={}{0:0}%}" 
+           HorizontalAlignment="Center" 
+           VerticalAlignment="Center"/>
+        <TextBlock Text="{Binding StatusMessage, UpdateSourceTrigger=PropertyChanged}" Name="statusTxt"
+           HorizontalAlignment="Center" FontFamily="Century Gothic"
+            FontSize="12"
+            FontStretch="UltraExpanded"
+            FontStyle="Italic"
+            FontWeight="UltraBold"
+  
+            TextAlignment="Center"
+  
+            Typography.NumeralStyle="OldStyle"
+            Typography.SlashedZero="True" Margin="0,85,0,-85"/>
+        <StackPanel VerticalAlignment="Center" Margin="250,0,-105,0">
+            <Button Click="CheckForModUpdates" Width="138" Height="25" Content="Actualizar Mods"/>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" Margin="-460,0,-105,0">
+            <Button Click="DownloadHowToConnectInstructions" Width="139" Height="25" Content="Como empezar a jugar"/>
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>

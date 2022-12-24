@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WursModChecker", "WursModChecker\WursModChecker.csproj", "{35BC9AD4-75D4-4F7A-A6AC-BDDCADC0153F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35BC9AD4-75D4-4F7A-A6AC-BDDCADC0153F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35BC9AD4-75D4-4F7A-A6AC-BDDCADC0153F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35BC9AD4-75D4-4F7A-A6AC-BDDCADC0153F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35BC9AD4-75D4-4F7A-A6AC-BDDCADC0153F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2222BE33-BB59-47DB-920B-D29E9E7F8466}
+	EndGlobalSection
+EndGlobal

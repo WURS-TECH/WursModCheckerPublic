@@ -1,0 +1,89 @@
+﻿<mah:MetroWindow x:Class="WursModChecker.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                 xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:models="clr-namespace:WursModChecker.Models" d:DataContext="{d:DesignInstance Type=models:TransactionStatus}"
+                 Title="Wurs Minecraft Companion"
+                 GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                 ResizeMode="NoResize"
+                 WindowStartupLocation="CenterScreen"
+                 mc:Ignorable="d"
+                 SizeToContent="WidthAndHeight">
+
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Button>
+                <iconPacks:VaadinIcons Width="22"
+                                  Height="22"
+                                  Kind="CloudDownloadOutline" />
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="116*" />
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="75*" />
+        </Grid.RowDefinitions>
+        <mah:FlipView x:Name="FlipView1st" HorizontalAlignment="Left"
+              Height="450"
+                Width="600"
+              Foreground="{DynamicResource MahApps.Brushes.ThemeBackground}"
+              SelectionChanged="FlipView_SelectionChanged" Grid.RowSpan="2">
+            <mah:FlipView.Items>
+                <Grid Background="#2E8DEF">
+                    <Image x:Name="flipViewImage1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Background="#00A600">
+                    <Image x:Name="flipViewImage2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Background="#BF1E4B">
+                    <Image x:Name="flipViewImage3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Background="#2E8DEF">
+                    <Image x:Name="flipViewImage4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Background="#00A600">
+                    <Image x:Name="flipViewImage5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Background="#BF1E4B">
+                    <Image x:Name="flipViewImage6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Background="#2E8DEF">
+                    <Image x:Name="flipViewImage7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Background="#00A600">
+                    <Image x:Name="flipViewImage8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Background="#BF1E4B">
+                    <Image x:Name="flipViewImage9" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </mah:FlipView.Items>
+        </mah:FlipView>
+        <WrapPanel Width="586" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" >
+            <mah:Tile Title="Actualizar Mods"
+               Margin="3"
+               Background="Teal"
+               HorizontalTitleAlignment="Center" Click="OpenModUpdaterWindow">
+                <iconPacks:PackIconModern Width="40"
+                              Height="40"
+                              Kind="CabinetFiles" />
+            </mah:Tile>
+            <mah:Tile Title="Votaciones Mods(Proximamente)"   Margin="3" HorizontalTitleAlignment="Center" >
+                <iconPacks:PackIconModern Width="40"
+                              Height="40"
+                              Kind="AppFavorite" />
+            </mah:Tile>
+            <mah:Tile Title="Subir fotos" Background="Green" Margin="3" HorizontalTitleAlignment="Center" Click="OpenImageUploadWindow">
+                <iconPacks:PackIconModern Width="40"
+                              Height="40"
+                              Kind="Image" />
+            </mah:Tile>
+            <mah:Tile Title="Ideas?"  Background="#D2691E" Margin="3" HorizontalTitleAlignment="Center" />
+        </WrapPanel>
+    </Grid>
+</mah:MetroWindow>
